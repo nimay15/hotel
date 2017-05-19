@@ -1,0 +1,97 @@
+<head>
+<style>
+    #sprite { position:relative; } // needed for the img to be free to move around
+</style>
+<script>
+    var timer_id; // reference of the timer, needed to stop it
+    var speed = 50; // pixels/second
+    var period = 40; // milliseconds
+    var sprite; // the element that will move
+    var sprite_speed = 0; // move per period
+    var sprite_position = 100; // pixels
+
+
+    function animate ()
+    {
+        sprite_position += sprite_speed;
+        if (sprite_position < 0) sprite_position = 0;
+        if (sprite_position > 200) sprite_position = 200;
+        sprite.style.left = sprite_position+'px';
+    }
+
+    function move(direction)
+    {
+        if (timer_id) stop();
+        sprite_speed = speed * period/1000 * direction;
+        timer_id = setInterval (animate, period);
+    }
+
+    function stop()
+    {
+        clearInterval (timer_id);
+        timer_id = null;
+    }
+
+    function init()
+    {
+       sprite = document.getElementById ("sprite"); // the HTML element we will move
+       animate(); // just to initialize sprite position
+    }
+
+    window.onload =init; // start doing things once the page has loaded
+</script>
+</head>
+<body>
+    <img id="sprite" src="http://petiteleve.free.fr/SO/yoshi.png" />
+    <p>Click the buttons below to handle animation</p>
+    <input type="button" value="Left"  onmousedown="move(-1);" onmouseup="stop();"/>
+    <input type="button" value="Right" onmousedown="move( 1);" onmouseup="stop();"/>
+</body><head>
+<style>
+    #sprite { position:relative; } // needed for the img to be free to move around
+</style>
+<script>
+    var timer_id; // reference of the timer, needed to stop it
+    var speed = 50; // pixels/second
+    var period = 40; // milliseconds
+    var sprite; // the element that will move
+    var sprite_speed = 0; // move per period
+    var sprite_position = 100; // pixels
+
+
+    function animate ()
+    {
+        sprite_position += sprite_speed;
+        if (sprite_position < 0) sprite_position = 0;
+        if (sprite_position > 200) sprite_position = 200;
+        sprite.style.left = sprite_position+'px';
+    }
+
+    function move(direction)
+    {
+        if (timer_id) stop();
+        sprite_speed = speed * period/1000 * direction;
+        timer_id = setInterval (animate, period);
+    }
+
+    function stop()
+    {
+        clearInterval (timer_id);
+        timer_id = null;
+    }
+
+    function init()
+    {
+       sprite = document.getElementById ("sprite"); // the HTML element we will move
+       animate(); // just to initialize sprite position
+    }
+
+    window.onload =init; // start doing things once the page has loaded
+</script>
+</head>
+<body>
+    <img id="sprite" src="http://petiteleve.free.fr/SO/yoshi.png" />
+    <p>Click the buttons below to handle animation</p>
+    <input type="button" value="Left"  onmousedown="move(-1);" onmouseup="stop();"/>
+    <input type="button" value="Right" onmousedown="move( 1);" onmouseup="stop();"/>
+</body>
