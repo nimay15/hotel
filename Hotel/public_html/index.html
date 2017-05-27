@@ -2,30 +2,37 @@
 <head>
 <title> Four Seasons</title> 
 <link rel="icon" href="logo.png" type="image/x-icon"> <!--Title Logo-->
-<div class="container" onclick="myFunction(this)"> <!--Menu Button-->
-  <div class="bar1"></div> 
-  <div class="bar2"></div>
-  <div class="bar3"></div>
-   <div id="myDropdown" class="container">
-    <a href="#">Link 1</a>
-    <a href="#">Link 2</a>
-    <a href="#">Link 3</a>
-  </div>
+<div id="mySidenav" class="sidenav"><!--Menu Button-->
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <a href="#">About</a>
+  <a href="#">Gallery</a>
+  <a href="#">Tariff</a>
+  <a href="#">Rooms & Suits</a>
+  <a href="#">Careers</a>
+  <a href="#">Contact Us</a>
 </div>
 
+<span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
+
 <script>
-function myFunction(x) {
-    x.classList.toggle("change");
+function openNav() {
+    document.getElementById("mySidenav").style.width = "100%";
 }
-</script>
+
+function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+}
+</script> <!-- Closing Menu Button-->
+
 <header>
 <link rel="stylesheet" type="text/css" href="hotelcss.css">
 <div class="headerdiv" height: "40%" width: "100%" align = "left">
-     <img src="logo.png" style="width:15%; height:20%;"></link>
+     </link>
 
 
-<body style="background-color:white;">
-    <h1><p class="text-center" class="navbar-header"><font face="Comic Sans MS" >Four Seasons Hotel & Resorts</font></h1>
+<body style="background-color:white;"> 
+    <h1><p class="text-center" class="text-top"><img src="logo.png" style="width:15%; height:20%;" align="left"><br>
+        <font face="Comic Sans MS" >Four Seasons Hotel & Resorts</font></h1><br> <br><br>
  	 
 </body style="background-color:#045aef;">
 </div>
@@ -36,21 +43,8 @@ function myFunction(x) {
 <center>
 
 </body>
-<br><br>
-<nav>
-    <table width ="100%">
-        <tr bgcolor="skyblue" align="center">
-            <td><a href="/home/">|HOME|</a></td>
-<td><a href="D:\Hotel HTML\About Us\public_html">ABOUT US|</a></td>
-<td><a href="/Roomsandsuite/">ROOMS&SUITES|</a></td>
-<td><a href="/resturants/">RESTAURANTS|</a></td>
-<td><a href="/things to do/">THINGS TO DO|</a></td>
-<td><a href="/gallery/">GALLERY|</a></td>
-<td><a href="/tariff/">TARIFF|</a></td>
-<td><a href="file:///D:/Hotel%20HTML/Contactus.html">CONTACT US|</a></td>
-    </tr>
-    </table>
-</nav><br> <br>
+
+
    <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -59,7 +53,7 @@ function myFunction(x) {
 </head>
 <body>
 
-<div class="container">
+<div class="container"> <!-- Caurousel -->
     
   <div id="myCarousel" class="carousel slide" data-ride="carousel">
     <!-- Indicators -->
